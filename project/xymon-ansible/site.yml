@@ -1,0 +1,16 @@
+---
+# manage xymon
+
+- hosts: radm802p
+  remote_user: root
+
+  roles:
+    - common
+    - xymon-server
+
+- hosts: rbld600p
+  remote_user: root
+
+  roles:
+    - common
+    - xymon-client

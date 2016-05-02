@@ -1,0 +1,9 @@
+---
+- hosts: all
+  #serial: 50
+  become: yes
+  tasks:
+  - name: ensure bind-libs and bind-utils are the latest version
+    yum:
+      name: bind-libs,bind-utils
+      state: latest

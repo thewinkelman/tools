@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for s in ns1 ns2 ns3 ns4 rutl605p.prod
+do
+  echo $s:
+  host newsobserver.com $s.nandomedia.com | grep "has address"
+done

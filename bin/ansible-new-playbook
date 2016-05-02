@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+PBNAME=$1
+
+touch $PBNAME/site.yml
+mkdir -p $PBNAME/roles/common/tasks/
+mkdir -p $PBNAME/roles/common/tasks/
+

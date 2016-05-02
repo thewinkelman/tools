@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+
+set timeout 5
+set hostname [lindex $argv 0]
+set username root
+
+spawn ssh $hostname -l $username
+
+expect "$username@$hostname's password: "
+send {password\n}
+expect "[root@kwinkelman-centos6-64 ~]# "
+send {ll\n}
+send {exit\n}
+exit
+

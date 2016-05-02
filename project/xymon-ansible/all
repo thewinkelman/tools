@@ -1,0 +1,4 @@
+---
+# These are global variables
+
+xymon_shared_packages: ["perl-File-Slurp"],["perl-libwww-perl"]

@@ -1,0 +1,6 @@
+---
+- hosts: futl400p
+  #serial: 50
+  become: yes
+  tasks:
+  - name: install openvas packages

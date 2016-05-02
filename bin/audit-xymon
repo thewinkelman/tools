@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+function cleanup {
+  rm -rf $scratch
+}
+trap cleanup EXIT
+
+scratch=$(mktemp -d -t tmp.ansible-create-hostlist)
+
+dnss ^r | grep " a " | cut -d":" -f2 | cut -f1 -d" " | egrep "^r\w{3}\d{3}" | egrep -v "rbld|console" | sort | uniq | sort > $scratch/ansible.dump
+grep ^r...0 $scratch/ansible.dump > $scratch/ansible.raleigh
+grep ^r...2 $scratch/ansible.dump > $scratch/ansible.cary
+grep ^r...6 $scratch/ansible.dump > $scratch/ansible.ftw
+
+cp -p ~/ansible.all ~/ansible.all.bu
+
+echo "[raleigh]" > ~/ansible.all
+cat $scratch/ansible.raleigh >> ~/ansible.all
+echo "[cary]" >> ~/ansible.all
+cat $scratch/ansible.cary >> ~/ansible.all
+echo "[ftw]" >> ~/ansible.all
+cat $scratch/ansible.ftw >> ~/ansible.all
+
+diff ~/ansible.all ~/ansible.all.bu 2>&1 >/dev/null
+
+if [ $? -eq 0 ]
+then
+  exit 0
+else
+  comm -3 ~/ansible.all ~/ansible.all.bu
+fi
+

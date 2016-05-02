@@ -1,0 +1,9 @@
+#!/usr/local/bin/bash
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: $0 searchstring"
+    exit 1
+fi
+
+ssh ahnoyd@radm601p.prod.nandomedia.com. "egrep $1 /var/named/db*"
+

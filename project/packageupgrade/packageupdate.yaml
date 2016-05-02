@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: False
+  become: yes
+  tasks:
+  - name: ensure the package is the latest version
+    yum:
+      name: xymon-client
+      state: latest
+      enablerepo: mi-tech-test
+      update_cache: yes

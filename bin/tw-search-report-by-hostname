@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: $0 searchstring"
+    exit 1
+fi
+
+grep -rl "TWReport $1" $HOME/tripwiremail/new
+
+

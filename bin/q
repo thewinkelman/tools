@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $HeadURL: svn+ssh://svn0.prod.nandomedia.com/nm/home/mit/svn/bladelist/trunk/share/doc/examples/q $
+#
+# search.php wrapper
+# place in $HOME/bin
+# 
+# usage: q [ name ... ]
+#
+#  --nlifanov, 2015
+#
+
+TO=4
+SRV="cobbler0 cobbler2 cobbler6"
+SFX=".prod.nandomedia.com"
+
+f_runtask()
+{
+  if [ ! -z "$1" ]; then
+    for s in $SRV; do
+      curl -s -m $TO "http://${s}${SFX}/search.php?q=$1" && break
+    done | grep -v '^$'
+  fi
+}
+
+f_selfupdate()
+{
+    t=$(mktemp /tmp/q.XXXX); rm -f $t
+    svn export $(sed -n 's|^# .HeadURL: \(.*\) \$|\1|p' $0) $t >/dev/null
+    if sh -n $t 2>/dev/null >/dev/null; then
+      sh $0 -iu $t
+    fi
+}
+
+main()
+{
+  case "$1" in
+    -u) shift; f_selfupdate ;;
+    -iu) shift; install -v "$1" $0 && rm -f "$1"; shift ;;
+    -it) shift; f_runtask "$@" ;;
+    '') ;;
+    *) echo "$@" | xargs -n1 -I{} -P$# $0 -it "{}" ;;
+  esac
+}; main "$@"
+

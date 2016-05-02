@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+#ignorelist=""
+ignorelist="/etc$|/etc/lvm/cache$|/etc/lvm/cache/.cache$|/etc/krb5.conf.cfsaved$|/opt/fujitsu/ServerViewSuite/RAIDManager/bin$|/opt/fujitsu/ServerViewSuite/RAIDManager/bin/piLSIStoreLib.xml$|/opt/fujitsu/ServerViewSuite/RAIDManager/bin/snapshot.xml$|/etc/krb5.keytab$|/etc/mtab$|/root/.bash_history$|/usr/lib/xymon/.bash_history$|/usr/lib/xymon/.lesshst$|/nm/local/etc/ganglia/conf.d$|/nm/local/etc/ganglia/conf.d/inelegant.conf$|.cfsaved$|/etc/sudoers|/etc/cron.d/mysql-host$|/etc/cron.d/mysql-cleanup$|/etc/cron.d/mysql-manage-backups$|/etc/cron.d/mysql-incremental-backups$|/etc/cron.d/mysql-backups$|/etc/cron.d$|/.svn/|/.svn|/etc/rc.d/rc0.d$|/etc/rc.d/rc0.d/K10radiusd$|/etc/rc.d/rc1.d$|/etc/rc.d/rc1.d/K10radiusd$|/etc/rc.d/rc2.d$|/etc/rc.d/rc2.d/S88radiusd$|/etc/rc.d/rc3.d$|/etc/rc.d/rc3.d/S88radiusd$|/etc/rc.d/rc4.d$|/etc/rc.d/rc4.d/S88radiusd$|/etc/rc.d/rc5.d$|/etc/rc.d/rc5.d/S88radiusd$|/etc/rc.d/rc6.d$|/etc/rc.d/rc6.d/K10radiusd$|/usr/lib/xymon$|/root$|/root/.lesshst$|/root/.viminfo$|HEREISAGOODPLACEFORPERMANTENT|/home/ahnoyd/tmp$|/nm/local/etc/httpd/sites-available$|/nm/local/etc/httpd/sites-available/www.sunherald.com.conf$|/nm/local/etc/httpd/sites-available/www.theolympian.com.conf$|/etc/tripwire$|/etc/tripwire/Makefile$|/etc/security$|/etc/cron.daily$|/etc/cron.daily/tripwire-check$|/nm/local/etc/httpd/sites.d$|/nm/local/etc/httpd/sites.d/.version$|/nm/local/etc/httpd/sites.d/cgi$|/nm/local/etc/httpd/sites.d/web$|/nm/local/etc/supervisord.d$|/nm/local/etc/supervisord.d/consul.conf$|/nm/local/etc/escenic/engine/common/com/escenic/framework/frontend$|/nm/local/etc/escenic/engine/common/com/escenic/framework/frontend/FrontEndConfig.properties$|/nm/local/etc/httpd/sites-available/www.bradenton.com.conf$|/nm/local/etc/httpd/sites-available/www.charlotteobserver.com.conf$|/nm/local/etc/httpd/sites-available/www.macon.com.conf$|/nm/local/etc/httpd/sites-available/www.thestate.com.conf$|/usr/lib/xymon/client/ext|$/usr/lib/xymon/client/ext/mysqlstat.pl$|/usr/lib/xymon/client/ext/solr4.sh$|/root/bin$|/root/bin/keybackup$|/etc/krb5.conf$|/etc/auto.local$|/usr/lib/python2.[4,6]/site-packages/|/usr/share/doc/MI-python-hdb-1.7.0|/usr/share/doc$|/usr/lib/python2.6/site-packages$|/etc/fstab$|/etc/logrotate.conf$|/nm/local/etc/httpd/sites-available/ops.devel.nandomedia.com.conf$|/nm/local/etc/httpd/sites-available/yum-ops.devel.nandomedia.com.conf$|/nm/local/etc/escenic/engine/environment/neo/publications$|/nm/local/etc/escenic/engine/environment/neo/publications/Pub-idahostatesman.properties$|/etc/yum/vars$|/etc/yum$|/etc/yum/vars/snap$|/etc/tripwire/local.key$|/etc/tripwire/tw.cfg$|/etc/tripwire/tw.pol$|/etc/aliases$|/etc/aliases.db$|/etc/logrotate.d$|/etc/logrotate.d/xymon-client$|/etc/yum.repos.d$|/etc/yum.repos.d/mi-tech.repo$|/etc/cron.daily/cfengine3.daily$|/etc/cron.daily/tripwire.daily$|/etc/yum/pluginconf.d$|/etc/yum/pluginconf.d/fastestmirror.conf$|/tmp$|/home/ahnoyd/.bash_history$|/nm/local/etc/tomcat7/mi-8080$|/nm/local/etc/tomcat7/mi-8080/server.xml$|/nm/local/etc/httpd/sites-available/escenic-internal.conf$/usr/share/man/man1$|/usr/share/man/man1/certutil.1.gz$|/usr/share/man/man1/cmsutil.1.gz$|/usr/share/man/man1/crlutil.1.gz$|/usr/share/man/man1/derdump.1.gz$|/usr/share/man/man1/modutil.1.gz$|/usr/share/man/man1/pk12util.1.gz$|/usr/share/man/man1/pp.1.gz$|/usr/share/man/man1/signtool.1.gz$|/usr/share/man/man1/signver.1.gz$|/usr/share/man/man1/ssltap.1.gz$|/usr/share/man/man1/vfychain.1.gz$|/usr/share/man/man1/vfyserv.1.gz$|/usr/bin$|/usr/bin/certutil$|/usr/bin/cmsutil$|/usr/bin/crlutil$|/usr/bin/modutil$|/usr/bin/pk12util$|/usr/bin/setup-nsssysinit.sh$|/usr/bin/signtool$|/usr/bin/signver$|/usr/bin/ssltap$|/usr/lib64$|/usr/lib64/libnss3.so$|/usr/lib64/libnssckbi.so$|/usr/lib64/libnsspem.so$|/usr/lib64/libnsssysinit.so$|/usr/lib64/libnssutil3.so$|/usr/lib64/libsmime3.so$|/usr/lib64/libssl3.so$|/usr/lib64/nss$|/usr/lib64/nss/libnssckbi.so$|/usr/lib64/nss/unsupported-tools$|/usr/lib64/nss/unsupported-tools/atob$|/usr/lib64/nss/unsupported-tools/btoa$|/usr/lib64/nss/unsupported-tools/derdump$|/usr/lib64/nss/unsupported-tools/ocspclnt$|/usr/lib64/nss/unsupported-tools/pp$|/usr/lib64/nss/unsupported-tools/selfserv$|/usr/lib64/nss/unsupported-tools/strsclnt$|/usr/lib64/nss/unsupported-tools/symkeyutil$|/usr/lib64/nss/unsupported-tools/tstclnt$|/usr/lib64/nss/unsupported-tools/vfychain$|/usr/lib64/nss/unsupported-tools/vfyserv$|/etc/alternatives$|/etc/alternatives/libnssckbi.so.x86_64$|/etc/ld.so.cache$|/etc/pki/nssdb$|/etc/pki/nssdb/cert8.db$|/etc/pki/nssdb/cert9.db$|/etc/pki/nssdb/key3.db$|/etc/pki/nssdb/key4.db$|/etc/pki/nssdb/pkcs11.txt$|/etc/pki/nssdb/secmod.db$|/lib64$|/lib64/libnspr4.so$|/lib64/libplc4.so$|/lib64/libplds4.so$|/usr/share/man/man1$|/usr/share/dracut/modules.d/05nss-softokn$|/usr/share/dracut/modules.d/05nss-softokn/install$|/usr/share/dracut/modules.d$|/usr/lib/libfreeblpriv3.chk$|/usr/lib/libfreeblpriv3.so$|/usr/lib$|/usr/lib/libfreebl3.chk$|/usr/lib/libfreebl3.so$|/usr/lib64/libfreeblpriv3.chk$|/usr/lib64/libfreeblpriv3.so$|/usr/lib64/libfreebl3.chk$|/usr/lib64/libfreebl3.so$|/usr/lib64/libnssdbm3.chk$|/usr/lib64/libnssdbm3.so$|/usr/lib64/libsoftokn3.chk$|/usr/lib64/libsoftokn3.so$|/usr/lib64/nss/saved$|/usr/lib64/nss/unsupported-tools/bltest$|/usr/lib64/nss/unsupported-tools/fipstest$|/usr/lib64/nss/unsupported-tools/shlibsign$|/etc/prelink.conf.d$|/etc/prelink.conf.d/nss-softokn-prelink.conf$|/lib/libfreeblpriv3.chk$|/lib/libfreeblpriv3.so$|/lib$|/lib/libfreebl3.chk$|/lib/libfreebl3.so$|/lib64/libfreeblpriv3.chk$|/lib64/libfreeblpriv3.so$|/lib64/libfreebl3.chk$|/lib64/libfreebl3.so$|/etc/hosts.deny$|/etc/tripwire/tw.pol.bak$"
+
+mailroot=~/tripwiremail
+maildir=$mailroot/new
+mailarchive=$mailroot/archive
+today=$(date +%Y%m%d)
+
+mkdir -p $mailarchive/"$today"
+
+for r in "$@"; do
+  # parse out important info from the mail:
+  subject_line=$(grep Subject "$maildir/$r")
+  report_host=$(echo "$subject_line" | grep Subject | awk {'print $3'})
+  report_id=$(echo "$subject_line" | grep Subject | awk {'print $4'})
+  objectlines=$(grep "object name" "$maildir/$r")
+
+  echo "===================="
+  if [[ -z $ignorelist ]]
+  then
+    objects=$(echo "$objectlines" | awk {'print $4'})
+  else
+    objects=$(echo "$objectlines" | awk {'print $4'} | egrep -v "$ignorelist")
+  fi
+
+  if [[ -z $ignorelist ]]
+  then
+    egrep "TWReport|object name" "$maildir/$r"
+  else
+    egrep "TWReport|object name" "$maildir/$r" | egrep -v "$ignorelist"
+  fi
+
+  if [[ -n $objects ]]
+  then
+    echo -n "Do you want to accept this report? (y/n) [n]: "
+    acceptance=Y
+#    read -r acceptance
+  else
+    acceptance=Y
+  fi
+
+  if [[ $acceptance =~ ^[Yy]$ ]]
+  then
+    ssh -o ConnectTimeout=15 "$report_host" tw-accept-report "$report_id"
+    if [[ $? -eq 0 ]]
+    then
+      echo "$(date): $report_host report $report_id accepted" | tee -a ~/tripwiremail/tripwire-report.log
+      mv "$maildir/$r" "$mailarchive/$today"
+      gzip "$mailarchive/$today/$r"
+    fi
+  fi
+
+done

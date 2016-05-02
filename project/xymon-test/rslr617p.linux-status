@@ -1,0 +1,682 @@
+client rslr617p.linux linux
+[date]
+Wed Oct 28 14:17:14 EDT 2015
+[uname]
+Linux rslr617p 2.6.32-573.7.1.el6.x86_64 x86_64
+[osversion]
+CentOS 6.7
+LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+Distributor ID:	CentOS
+Description:	CentOS release 6.7 (Final)
+Release:	6.7
+Codename:	Final
+[uptime]
+ 14:17:16 up  1:20,  0 users,  load average: 0.17, 0.10, 0.02
+[who]
+[df]
+Filesystem              1024-blocks    Used Available Capacity Mounted on
+/dev/mapper/vg0-root         499656  344640    128804      73% /
+/dev/xvda1                   253871   67807    172957      29% /boot
+/dev/mapper/vg0-home        1998672    3152   1890664       1% /home
+/dev/mapper/vg0-nmlocal   103081248 1861164  95977204       2% /nm/local
+/dev/mapper/vg0-usr         1998672  943792    950024      50% /usr
+/dev/mapper/vg0-var         1998672  322092   1571724      18% /var
+[inode]
+Filesystem               Inodes IUsed   IFree IUse% Mounted on
+/dev/mapper/vg0-root      32768  8738   24030   27% /
+/dev/xvda1                65536    44   65492    1% /boot
+/dev/mapper/vg0-home     131072    30  131042    1% /home
+/dev/mapper/vg0-nmlocal 6553600 19106 6534494    1% /nm/local
+/dev/mapper/vg0-usr      131072 41616   89456   32% /usr
+/dev/mapper/vg0-var      131072  6892  124180    6% /var
+[mount]
+/dev/mapper/vg0-root on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,noexec,nosuid)
+/dev/xvda1 on /boot type ext3 (rw)
+/dev/mapper/vg0-home on /home type ext4 (rw)
+/dev/mapper/vg0-nmlocal on /nm/local type ext4 (rw)
+/dev/mapper/vg0-usr on /usr type ext4 (rw)
+/dev/mapper/vg0-var on /var type ext4 (rw,noexec,nosuid)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+none on /proc/xen type xenfs (rw)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+sutl050p.prod:/export/futl004p/home-p0 on /nm/home type nfs (rw,nosuid,tcp,timeo=600,hard,intr,noacl,sloppy,addr=10.1.69.29)
+[free]
+             total       used       free     shared    buffers     cached
+Mem:      32736504    1637196   31099308        148      22080     328992
+-/+ buffers/cache:    1286124   31450380 
+Swap:      1048572          0    1048572 
+[ifconfig]
+eth0      Link encap:Ethernet  HWaddr 02:82:69:F5:C3:DB  
+          inet addr:10.178.77.219  Bcast:10.178.77.255  Mask:255.255.254.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:71056 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:62794 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28089260 (26.7 MiB)  TX bytes:8279816 (7.8 MiB)
+          Interrupt:125 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2424 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2424 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:389663 (380.5 KiB)  TX bytes:389663 (380.5 KiB)
+
+[route]
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+10.178.76.0     0.0.0.0         255.255.254.0   U         0 0          0 eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth0
+0.0.0.0         10.178.76.1     0.0.0.0         UG        0 0          0 eth0
+[netstat]
+Ip:
+    67784 total packets received
+    8 with invalid addresses
+    0 forwarded
+    0 incoming packets discarded
+    67776 incoming packets delivered
+    64835 requests sent out
+Icmp:
+    2033 ICMP messages received
+    42 input ICMP message failed.
+    ICMP input histogram:
+        destination unreachable: 66
+        echo requests: 1967
+    2038 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        destination unreachable: 71
+        echo replies: 1967
+IcmpMsg:
+        InType3: 66
+        InType8: 1967
+        OutType0: 1967
+        OutType3: 71
+Tcp:
+    1321 active connections openings
+    1933 passive connection openings
+    1909 failed connection attempts
+    151 connection resets received
+    3 connections established
+    60562 segments received
+    57597 segments send out
+    19 segments retransmited
+    0 bad segments received.
+    205 resets sent
+Udp:
+    5168 packets received
+    6 packets to unknown port received.
+    0 packet receive errors
+    5181 packets sent
+UdpLite:
+TcpExt:
+    1888 resets received for embryonic SYN_RECV sockets
+    2947 TCP sockets finished time wait in fast timer
+    251 delayed acks sent
+    3 delayed acks further delayed because of locked socket
+    Quick ack mode was activated 26 times
+    12864 packets directly queued to recvmsg prequeue.
+    117654 packets directly received from backlog
+    10459 packets directly received from prequeue
+    35496 packets header predicted
+    102 packets header predicted and directly queued to user
+    8680 acknowledgments not containing data received
+    13457 predicted acknowledgments
+    2 congestion windows recovered after partial ack
+    0 TCP data loss events
+    3 other TCP timeouts
+    26 DSACKs sent for old packets
+    3 connections reset due to unexpected data
+    112 connections reset due to early user close
+    TCPWantZeroWindowAdv: 6
+IpExt:
+    InOctets: 28217969
+    OutOctets: 7782239
+[ports]
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State      
+tcp        0      0 0.0.0.0:606                 0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:111                 0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:9010                0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:37044               0.0.0.0:*                   LISTEN      
+tcp        0      0 127.0.0.1:53                0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:60150               0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:8983                0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:38744               0.0.0.0:*                   LISTEN      
+tcp        0      0 0.0.0.0:48281               0.0.0.0:*                   LISTEN      
+tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      
+tcp        0      0 127.0.0.1:953               0.0.0.0:*                   LISTEN      
+tcp        0      0 10.178.77.219:22            10.110.112.20:17220         ESTABLISHED 
+tcp        1      0 10.178.77.219:60296         10.178.77.212:8983          CLOSE_WAIT  
+tcp        0      0 10.178.77.219:852           10.1.69.29:2049             ESTABLISHED 
+tcp        0      0 10.178.77.219:48369         10.178.77.177:2181          ESTABLISHED 
+
+Totals:
+      1 CLOSE_WAIT
+      3 ESTABLISHED
+     12 LISTEN
+     34 TIME_WAIT
+[ifstat]
+eth0      Link encap:Ethernet  HWaddr 02:82:69:F5:C3:DB  
+          inet addr:10.178.77.219  Bcast:10.178.77.255  Mask:255.255.254.0
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:71056 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:62794 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:28089260 (26.7 MiB)  TX bytes:8279816 (7.8 MiB)
+          Interrupt:125 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2424 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2424 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:389663 (380.5 KiB)  TX bytes:389663 (380.5 KiB)
+
+[mdstat]
+Personalities : 
+unused devices: <none>
+[ps]
+  PID  PPID USER      STARTED S PRI %CPU     TIME %MEM   RSZ    VSZ CMD
+    1     0 root     12:56:33 S  19  0.0 00:00:00  0.0  1604  23600 /sbin/init
+    2     0 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthreadd]
+    3     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/0]
+    4     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/0]
+    5     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/0]
+    6     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/0]
+    7     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/1]
+    8     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/1]
+    9     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/1]
+   10     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/1]
+   11     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/2]
+   12     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/2]
+   13     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/2]
+   14     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/2]
+   15     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/3]
+   16     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/3]
+   17     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/3]
+   18     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/3]
+   19     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/4]
+   20     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/4]
+   21     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/4]
+   22     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/4]
+   23     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/5]
+   24     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/5]
+   25     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/5]
+   26     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/5]
+   27     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/6]
+   28     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/6]
+   29     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/6]
+   30     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/6]
+   31     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/7]
+   32     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/7]
+   33     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/7]
+   34     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/7]
+   35     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/8]
+   36     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/8]
+   37     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/8]
+   38     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/8]
+   39     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/9]
+   40     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/9]
+   41     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/9]
+   42     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/9]
+   43     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/10]
+   44     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/10]
+   45     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/10]
+   46     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/10]
+   47     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/11]
+   48     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/11]
+   49     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/11]
+   50     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/11]
+   51     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/12]
+   52     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/12]
+   53     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/12]
+   54     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/12]
+   55     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/13]
+   56     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/13]
+   57     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/13]
+   58     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/13]
+   59     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/14]
+   60     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/14]
+   61     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/14]
+   62     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/14]
+   63     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [migration/15]
+   64     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [stopper/15]
+   65     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksoftirqd/15]
+   66     2 root     12:56:33 S 139  0.0 00:00:00  0.0     0      0 [watchdog/15]
+   99     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/0]
+  100     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/1]
+  101     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/2]
+  102     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/3]
+  103     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/4]
+  104     2 root     12:56:33 S  19  0.0 00:00:01  0.0     0      0 [events/5]
+  105     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/6]
+  106     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/7]
+  107     2 root     12:56:33 S  19  0.0 00:00:01  0.0     0      0 [events/8]
+  108     2 root     12:56:33 S  19  0.0 00:00:01  0.0     0      0 [events/9]
+  109     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/10]
+  110     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/11]
+  111     2 root     12:56:33 S  19  0.0 00:00:01  0.0     0      0 [events/12]
+  112     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/13]
+  113     2 root     12:56:33 S  19  0.0 00:00:02  0.0     0      0 [events/14]
+  114     2 root     12:56:33 S  19  0.0 00:00:01  0.0     0      0 [events/15]
+  123     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/0]
+  124     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/1]
+  125     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/2]
+  126     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/3]
+  127     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/4]
+  128     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/5]
+  129     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/6]
+  130     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/7]
+  131     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/8]
+  132     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/9]
+  133     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/10]
+  134     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/11]
+  135     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/12]
+  136     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/13]
+  137     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/14]
+  138     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events/15]
+  147     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/0]
+  148     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/1]
+  149     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/2]
+  150     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/3]
+  151     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/4]
+  152     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/5]
+  153     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/6]
+  154     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/7]
+  155     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/8]
+  156     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/9]
+  157     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/10]
+  158     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/11]
+  159     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/12]
+  160     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/13]
+  161     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/14]
+  162     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_long/15]
+  171     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  172     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  173     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  174     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  175     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  176     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  177     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  178     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  179     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  180     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  181     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  182     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  183     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  184     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  185     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  186     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [events_power_ef]
+  195     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [cgroup]
+  196     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [khelper]
+  197     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [netns]
+  198     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [async/mgr]
+  199     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [pm]
+  200     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [xenwatch]
+  201     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [xenbus]
+  202     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [sync_supers]
+  203     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [bdi-default]
+  204     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/0]
+  205     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/1]
+  206     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/2]
+  207     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/3]
+  208     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/4]
+  209     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/5]
+  210     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/6]
+  211     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/7]
+  212     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/8]
+  213     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/9]
+  214     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/10]
+  215     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/11]
+  216     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/12]
+  217     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/13]
+  218     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/14]
+  219     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kintegrityd/15]
+  220     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/0]
+  221     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/1]
+  222     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/2]
+  223     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/3]
+  224     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/4]
+  225     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/5]
+  226     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/6]
+  227     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/7]
+  228     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/8]
+  229     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/9]
+  230     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/10]
+  231     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/11]
+  232     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/12]
+  233     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/13]
+  234     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/14]
+  235     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kblockd/15]
+  236     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_aux]
+  237     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/0]
+  238     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/1]
+  239     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/2]
+  240     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/3]
+  241     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/4]
+  242     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/5]
+  243     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/6]
+  244     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/7]
+  245     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/8]
+  246     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/9]
+  247     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/10]
+  248     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/11]
+  249     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/12]
+  250     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/13]
+  251     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/14]
+  252     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ata_sff/15]
+  253     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [ksuspend_usbd]
+  254     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [khubd]
+  255     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kseriod]
+  256     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/0]
+  257     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/1]
+  258     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/2]
+  259     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/3]
+  260     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/4]
+  261     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/5]
+  262     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/6]
+  263     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/7]
+  264     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/8]
+  265     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/9]
+  266     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/10]
+  267     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/11]
+  268     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/12]
+  269     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/13]
+  270     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/14]
+  271     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md/15]
+  272     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/0]
+  273     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/1]
+  274     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/2]
+  275     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/3]
+  276     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/4]
+  277     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/5]
+  278     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/6]
+  279     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/7]
+  280     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/8]
+  281     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/9]
+  282     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/10]
+  283     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/11]
+  284     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/12]
+  285     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/13]
+  286     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/14]
+  287     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [md_misc/15]
+  288     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [linkwatch]
+  290     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [khungtaskd]
+  291     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kswapd0]
+  292     2 root     12:56:33 S  14  0.0 00:00:00  0.0     0      0 [ksmd]
+  293     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/0]
+  294     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/1]
+  295     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/2]
+  296     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/3]
+  297     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/4]
+  298     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/5]
+  299     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/6]
+  300     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/7]
+  301     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/8]
+  302     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/9]
+  303     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/10]
+  304     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/11]
+  305     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/12]
+  306     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/13]
+  307     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/14]
+  308     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [aio/15]
+  309     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/0]
+  310     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/1]
+  311     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/2]
+  312     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/3]
+  313     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/4]
+  314     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/5]
+  315     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/6]
+  316     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/7]
+  317     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/8]
+  318     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/9]
+  319     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/10]
+  320     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/11]
+  321     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/12]
+  322     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/13]
+  323     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/14]
+  324     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [crypto/15]
+  331     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/0]
+  332     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/1]
+  333     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/2]
+  334     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/3]
+  335     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/4]
+  336     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/5]
+  337     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/6]
+  338     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/7]
+  339     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/8]
+  340     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/9]
+  341     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/10]
+  342     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/11]
+  343     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/12]
+  344     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/13]
+  345     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/14]
+  346     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kthrotld/15]
+  348     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [khvcd]
+  349     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [kpsmoused]
+  350     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [usbhid_resumer]
+  351     2 root     12:56:33 S  19  0.0 00:00:00  0.0     0      0 [deferwq]
+  384     2 root     12:56:34 S  19  0.0 00:00:00  0.0     0      0 [kdmremove]
+  385     2 root     12:56:34 S  19  0.0 00:00:00  0.0     0      0 [kstriped]
+  555     2 root     12:56:35 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+  557     2 root     12:56:35 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+  575     2 root     12:56:35 S  19  0.0 00:00:00  0.0     0      0 [jbd2/dm-0-8]
+  576     2 root     12:56:35 S  19  0.0 00:00:00  0.0     0      0 [ext4-dio-unwrit]
+  670     1 root     12:56:37 S  23  0.0 00:00:00  0.0   824  10772 /sbin/udevd -d
+ 1128     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+ 1130     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+ 1132     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+ 1134     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [kdmflush]
+ 1135   670 root     12:56:44 S  21  0.0 00:00:00  0.0   812  10768 /sbin/udevd -d
+ 1201     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [kjournald]
+ 1202     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [jbd2/dm-4-8]
+ 1203     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [ext4-dio-unwrit]
+ 1204     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [jbd2/dm-5-8]
+ 1205     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [ext4-dio-unwrit]
+ 1206     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [jbd2/dm-2-8]
+ 1207     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [ext4-dio-unwrit]
+ 1208     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [jbd2/dm-3-8]
+ 1209     2 root     12:56:44 S  19  0.0 00:00:00  0.0     0      0 [ext4-dio-unwrit]
+ 1243     2 root     12:56:45 S  19  0.0 00:00:00  0.0     0      0 [flush-253:0]
+ 1245     2 root     12:56:45 S  19  0.0 00:00:00  0.0     0      0 [flush-253:3]
+ 1247     2 root     12:56:45 S  19  0.0 00:00:00  0.0     0      0 [flush-253:5]
+ 1255     2 root     12:56:45 S  19  0.0 00:00:00  0.0     0      0 [kauditd]
+ 1439     1 root     12:56:50 S  19  0.0 00:00:00  0.0   560   6160 /sbin/portreserve
+ 1449     1 root     12:56:50 S  19  0.0 00:00:00  0.0  1656 255420 /sbin/rsyslogd -i /var/run/syslogd.pid -c 5
+ 1464     1 root     12:56:51 S  19  0.0 00:00:00  0.0   812  18368 irqbalance --pid=/var/run/irqbalance.pid
+ 1482     1 named    12:56:51 S  19  0.0 00:00:03  0.0 22448 1310368 /usr/sbin/named -u named
+ 1527     1 rpc      12:56:51 S  19  0.0 00:00:00  0.0   964  18976 rpcbind
+ 1551     1 rpcuser  12:56:52 S  19  0.0 00:00:00  0.0  1344  23348 rpc.statd
+ 1576     1 root     12:56:52 S  19  0.0 00:00:00  0.0  1400  11304 /bin/bash /usr/sbin/xe-daemon -p /var/run/xe-daemon.pid
+ 1653     1 dbus     12:56:52 S  19  0.0 00:00:00  0.0   948  25672 dbus-daemon --system
+ 1697     1 root     12:56:53 S  19  0.0 00:00:00  0.0  1624 222004 /usr/sbin/ypbind
+ 1751     1 68       12:56:53 S  19  0.0 00:00:00  0.0  2716  41960 hald
+ 1752  1751 root     12:56:53 S  19  0.0 00:00:00  0.0  1328  20396 hald-runner
+ 1819     1 root     12:56:55 S  19  0.0 00:00:00  0.0  3512 537872 automount --pid-file /var/run/autofs.pid
+ 1859     1 root     12:56:56 S  19  0.0 00:00:00  0.0  1220  66224 /usr/sbin/sshd
+ 1872     1 root     12:56:56 S  19  0.0 00:00:00  0.0   936  21716 xinetd -stayalive -pidfile /var/run/xinetd.pid
+ 1883     1 ntp      12:56:56 S  19  0.0 00:00:00  0.0  1936  34844 ntpd -u ntp:ntp -p /var/run/ntpd.pid -g
+ 1915     1 root     12:56:57 S  19  0.0 00:00:03  0.0  4280 124952 /usr/sbin/cf-execd
+ 1940     1 root     12:56:57 S  19  0.0 00:00:00  0.0  2456  88872 sendmail: accepting connections
+ 1951     1 smmsp    12:56:57 S  19  0.0 00:00:00  0.0  2140  80304 sendmail: Queue runner@01:00:00 for /var/spool/clientmqueue
+ 1988     1 xymon    12:56:57 S  19  0.0 00:00:02  0.0   660   8392 /usr/lib/xymon/client/bin/xymonlaunch --config=/usr/lib/xymon/client/etc/clientlaunch.cfg --log=/usr/lib/xymon/client/logs/clientlaunch.log --pidfile=/usr/lib/xymon/client/logs/clientlaunch.rslr617p.pid
+ 2000     1 root     12:56:58 S  19  0.0 00:00:00  0.0   536   6736 /usr/sbin/gpm -m /dev/input/mice -t exps2
+ 2012     1 root     12:56:58 S  19  0.0 00:00:00  0.0  1232 116860 crond
+ 2029     1 root     12:56:58 S  19  0.0 00:00:00  0.0   488  21104 /usr/sbin/atd
+ 2045     1 root     12:56:58 S  19  0.0 00:00:00  0.0   596   4064 /sbin/mingetty /dev/tty1
+ 2047     1 root     12:56:58 S  19  0.0 00:00:00  0.0   596   4064 /sbin/mingetty /dev/tty2
+ 2049     1 root     12:56:58 S  19  0.0 00:00:00  0.0   596   4064 /sbin/mingetty /dev/tty3
+ 2051     1 root     12:56:58 S  19  0.0 00:00:00  0.0   596   4064 /sbin/mingetty /dev/tty4
+ 2053     1 root     12:56:58 S  19  0.0 00:00:00  0.0   600   4064 /sbin/mingetty /dev/tty5
+ 2055     1 root     12:56:58 S  19  0.0 00:00:00  0.0   600   4064 /sbin/mingetty /dev/tty6
+ 2056   670 root     12:56:58 S  21  0.0 00:00:00  0.0   796  10768 /sbin/udevd -d
+ 2057     1 root     12:56:58 S  19  0.0 00:00:00  0.0   656   4080 /sbin/agetty /dev/hvc0 38400 vt100-nav
+ 2487     1 nmapp    12:58:10 S  19  1.7 00:01:23  2.8 920892 28230852 java -server -Xms20480m -Xmx20480m -Dsolr.solr.home=/nm/local/var/solr -Dsolr.maxWarmingSeachers=2 -Dsolr.filterCache.autoWarmCount=30% -Djetty.port=8983 -Djetty.home=/nm/local/solr -DnumShards=1 -XX:NewRatio=2 -XX:SurvivorRatio=7 -XX:+UseConcMarkSweepGC -XX:+CMSScavengeBeforeRemark -XX:MaxTenuringThreshold=8 -XX:CMSFullGCsBeforeCompaction=1 -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=65 -XX:+CMSParallelRemarkEnabled -XX:+ParallelRefProcEnabled -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dlog4j.configuration=file:///nm/local/conf/solr/log4j.properties -jar start.jar
+ 4019  1859 root     13:06:48 S  19  0.0 00:00:00  0.0  4492  95976 sshd: nlifanov [priv]
+ 4031     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/0]
+ 4032     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/1]
+ 4033     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/2]
+ 4034     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/3]
+ 4035     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/4]
+ 4036     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/5]
+ 4037     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/6]
+ 4038     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/7]
+ 4039     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/8]
+ 4040     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/9]
+ 4041     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/10]
+ 4042     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/11]
+ 4043     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/12]
+ 4044     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/13]
+ 4045     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/14]
+ 4046     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [rpciod/15]
+ 4048     2 root     13:06:50 S  24  0.0 00:00:00  0.0     0      0 [kslowd000]
+ 4049     2 root     13:06:50 S  24  0.0 00:00:00  0.0     0      0 [kslowd001]
+ 4050     2 root     13:06:50 S  19  0.0 00:00:00  0.0     0      0 [nfsiod]
+ 4054  4019 nlifanov 13:06:51 S  19  0.0 00:00:00  0.0  1920  95976 sshd: nlifanov@notty
+12491     2 root     14:15:44 S  19  0.0 00:00:00  0.0     0      0 [flush-253:2]
+12536     2 root     14:16:23 S  19  0.0 00:00:00  0.0     0      0 [lockd]
+12651  1576 root     14:17:05 S  19  0.0 00:00:00  0.0   536   4072 sleep 60
+12665  1988 xymon    14:17:14 S  19  0.0 00:00:00  0.0  1400 106064 /bin/sh /usr/lib/xymon/client/bin/xymonclient.sh
+12686  1988 xymon    14:17:14 S  19  0.0 00:00:00  0.0  1420 106060 /bin/sh /usr/lib/xymon/client/ext/thr.sh
+12695 12686 xymon    14:17:14 S  19  0.0 00:00:00  0.0   664 106060 /bin/sh /usr/lib/xymon/client/ext/thr.sh
+12699 12695 xymon    14:17:14 S  19 75.5 00:00:01  0.0 11376 222164 python /nm/local/scripts/hdbq -C rslr617p
+12701 12695 xymon    14:17:14 S  19  0.0 00:00:00  0.0   604 100928 tr , \n
+12712 12665 xymon    14:17:14 S  19  0.5 00:00:00  0.0  1332   9200 /bin/sh /usr/lib/xymon/client/bin/xymonclient-mi.sh
+12862 12712 xymon    14:17:15 R  19 37.0 00:00:00  0.0  1196  17612 ps -Aww -o pid,ppid,user,start,state,pri,pcpu,time,pmem,rsz,vsz,cmd
+[top]
+top - 14:17:17 up  1:20,  0 users,  load average: 0.17, 0.10, 0.02
+Tasks: 369 total,   1 running, 368 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.3%us,  0.1%sy,  0.0%ni, 98.3%id,  0.0%wa,  0.0%hi,  0.0%si,  1.2%st
+Mem:  32736504k total,  1633676k used, 31102828k free,    22080k buffers
+Swap:  1048572k total,        0k used,  1048572k free,   329000k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+12699 xymon     20   0  221m  14m 4364 S 42.3  0.0   0:01.74 python /nm/local/scripts/hdbq -C rslr617p
+12879 xymon     20   0 19392 1520  976 R  1.9  0.0   0:00.02 top -c -b -n 1
+    1 root      20   0 23600 1604 1264 S  0.0  0.0   0:00.73 /sbin/init
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [kthreadd]
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:00.66 [migration/0]
+    4 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [ksoftirqd/0]
+    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/0]
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.01 [watchdog/0]
+    7 root      RT   0     0    0    0 S  0.0  0.0   0:00.12 [migration/1]
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/1]
+    9 root      20   0     0    0    0 S  0.0  0.0   0:00.26 [ksoftirqd/1]
+   10 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/1]
+   11 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/2]
+   12 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/2]
+   13 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [ksoftirqd/2]
+   14 root      RT   0     0    0    0 S  0.0  0.0   0:00.13 [watchdog/2]
+   15 root      RT   0     0    0    0 S  0.0  0.0   0:00.44 [migration/3]
+   16 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/3]
+   17 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [ksoftirqd/3]
+   18 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 [watchdog/3]
+   19 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/4]
+   20 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/4]
+   21 root      20   0     0    0    0 S  0.0  0.0   0:00.24 [ksoftirqd/4]
+   22 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/4]
+   23 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/5]
+   24 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/5]
+   25 root      20   0     0    0    0 S  0.0  0.0   0:00.01 [ksoftirqd/5]
+   26 root      RT   0     0    0    0 S  0.0  0.0   0:00.06 [watchdog/5]
+   27 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/6]
+   28 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/6]
+   29 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [ksoftirqd/6]
+   30 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/6]
+   31 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/7]
+   32 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/7]
+   33 root      20   0     0    0    0 S  0.0  0.0   0:00.42 [ksoftirqd/7]
+   34 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/7]
+   35 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/8]
+   36 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/8]
+   37 root      20   0     0    0    0 S  0.0  0.0   0:00.21 [ksoftirqd/8]
+   38 root      RT   0     0    0    0 S  0.0  0.0   0:00.12 [watchdog/8]
+   39 root      RT   0     0    0    0 S  0.0  0.0   0:00.28 [migration/9]
+   40 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/9]
+   41 root      20   0     0    0    0 S  0.0  0.0   0:00.07 [ksoftirqd/9]
+   42 root      RT   0     0    0    0 S  0.0  0.0   0:00.09 [watchdog/9]
+   43 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/10]
+   44 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/10]
+   45 root      20   0     0    0    0 S  0.0  0.0   0:00.04 [ksoftirqd/10]
+   46 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/10]
+   47 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/11]
+   48 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/11]
+   49 root      20   0     0    0    0 S  0.0  0.0   0:00.18 [ksoftirqd/11]
+   50 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/11]
+   51 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [migration/12]
+   52 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/12]
+   53 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [ksoftirqd/12]
+   54 root      RT   0     0    0    0 S  0.0  0.0   0:00.08 [watchdog/12]
+   55 root      RT   0     0    0    0 S  0.0  0.0   0:00.12 [migration/13]
+   56 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/13]
+   57 root      20   0     0    0    0 S  0.0  0.0   0:00.02 [ksoftirqd/13]
+   58 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/13]
+   59 root      RT   0     0    0    0 S  0.0  0.0   0:00.48 [migration/14]
+   60 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/14]
+   61 root      20   0     0    0    0 S  0.0  0.0   0:00.20 [ksoftirqd/14]
+   62 root      RT   0     0    0    0 S  0.0  0.0   0:00.24 [watchdog/14]
+   63 root      RT   0     0    0    0 S  0.0  0.0   0:00.01 [migration/15]
+   64 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [stopper/15]
+   65 root      20   0     0    0    0 S  0.0  0.0   0:00.29 [ksoftirqd/15]
+   66 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 [watchdog/15]
+   99 root      20   0     0    0    0 S  0.0  0.0   0:00.52 [events/0]
+  100 root      20   0     0    0    0 S  0.0  0.0   0:00.35 [events/1]
+  101 root      20   0     0    0    0 S  0.0  0.0   0:00.95 [events/2]
+  102 root      20   0     0    0    0 S  0.0  0.0   0:00.66 [events/3]
+  103 root      20   0     0    0    0 S  0.0  0.0   0:00.71 [events/4]
+  104 root      20   0     0    0    0 S  0.0  0.0   0:01.71 [events/5]
+  105 root      20   0     0    0    0 S  0.0  0.0   0:00.52 [events/6]
+  106 root      20   0     0    0    0 S  0.0  0.0   0:00.78 [events/7]
+  107 root      20   0     0    0    0 S  0.0  0.0   0:01.20 [events/8]
+  108 root      20   0     0    0    0 S  0.0  0.0   0:01.54 [events/9]
+  109 root      20   0     0    0    0 S  0.0  0.0   0:00.68 [events/10]
+  110 root      20   0     0    0    0 S  0.0  0.0   0:00.69 [events/11]
+  111 root      20   0     0    0    0 S  0.0  0.0   0:01.40 [events/12]
+  112 root      20   0     0    0    0 S  0.0  0.0   0:00.85 [events/13]
+  113 root      20   0     0    0    0 S  0.0  0.0   0:02.84 [events/14]
+  114 root      20   0     0    0    0 S  0.0  0.0   0:01.55 [events/15]
+  123 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/0]
+  124 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/1]
+  125 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/2]
+  126 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/3]
+  127 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/4]
+  128 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/5]
+  129 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/6]
+  130 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/7]
+  131 root      20   0     0    0    0 S  0.0  0.0   0:00.00 [events/8]
+[vmstat]
+procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 31103180  21836 328776    0    0     4     1   22    9  0  0 98  0  1	
+ 0  0      0 31116700  22080 328992    0    0     0    11  194  115  0  0 100  0  0	
+[msgs:/var/log/messages]
+Cannot open logfile /var/log/messages : Permission denied
+
+[logfile:/var/log/messages]
+type:100000 (file)
+mode:600 (-rw-------)
+linkcount:1
+owner:0 (root)
+group:0 (root)
+size:170660
+clock:1446056242 (2015/10/28-14:17:22)
+atime:1445760121 (2015/10/25-04:02:01)
+ctime:1446056139 (2015/10/28-14:15:39)
+mtime:1446056139 (2015/10/28-14:15:39)
+
+[clientversion]
+Xymon version 4.3.21
+[clock]
+epoch: 14460599050.045101
+local: 2015-10-28 15:24:30 EDT
+UTC: 2015-10-28 15:24:30 GMT
+log:/var/log/messages:10240
+ignore MARK

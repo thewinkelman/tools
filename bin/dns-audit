@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: $0 searchstring"
+    exit 1
+fi
+
+for s in radm001p rutl010p rutl011p rutl012p rutl400p.nandomedia.com rutl402p.nandomedia.com 10.110.104.80 10.110.104.66; do
+  RESULT=$(dig @$s "$1" | grep ^"$1" | grep -v 'IN  NS')
+  echo "$s": "$RESULT"
+done

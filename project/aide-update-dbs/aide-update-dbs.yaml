@@ -1,0 +1,8 @@
+---
+- hosts: ftw:mia
+  gather_facts: False
+  serial: 40
+  become: yes
+  tasks:
+  - name: update aide database
+    command: /usr/local/bin/aide-update-db

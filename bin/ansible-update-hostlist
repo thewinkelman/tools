@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+function cleanup {
+  rm -rf "$scratch"
+}
+trap cleanup EXIT
+
+scratch=$(mktemp -d -t tmp.ansible-create-hostlist)
+hostlist=/usr/local/etc/ansible/inventory/hosts
+dnss=/Users/kwinkelman/bin/dnss
+
+"$dnss" ^r | grep " a " | cut -d":" -f2 | cut -f1 -d" " | egrep "^r\w{3}\d{3}" | egrep -v "rbld|console" | sort | uniq | sort > "$scratch"/ansible.dump
+if [ "${PIPESTATUS[0]}" -ne 0 ]
+then
+  echo "Could not retrieve host list. Aborting."
+  exit 1
+fi
+
+{
+  echo "[ftw]"
+  grep ^r...6 "$scratch"/ansible.dump
+  echo "[mia]"
+  grep ^r...8 "$scratch"/ansible.dump
+} >> "$scratch"/hosts.new
+
+if [ ! -f $hostlist ]
+then
+  echo "hosts list not found, creating a new one."
+  cp -p "$scratch"/hosts.new $hostlist
+  exit 0
+fi
+
+diff "$scratch"/hosts.new $hostlist.bu 2>&1 >/dev/null
+
+if [ $? -eq 0 ]
+then
+  exit 0
+else
+  mv $hostlist $hostlist.bu
+  mv "$scratch"/hosts.new $hostlist
+  comm -3 $hostlist $hostlist.bu
+fi
+

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+grep -h "object name" ~/tripwiremail/new/* | sort | uniq -c | sort

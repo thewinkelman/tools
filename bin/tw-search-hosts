@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]] ; then
+    echo "Usage: $0 searchstring"
+    exit 1
+fi
+
+#grep -rh $1 $HOME/tripwiremail/new/ | grep Subject | awk '{print $3}' | sort | uniq
+grep -rh "TWReport $1" $HOME/tripwiremail/new/ | awk '{print $3}' | sort | uniq

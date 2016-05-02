@@ -1,0 +1,8 @@
+---
+- hosts: mccintra
+  gather_facts: False
+  tasks:
+   - name: copy bash profile to remote system
+     copy: src=~/git/kwinkelman-env/home/bash_profile dest=~/.bash_profile
+   - name: copy bashrc to remote system
+     copy: src=~/git/kwinkelman-env/home/bashrc dest=~/.bashrc

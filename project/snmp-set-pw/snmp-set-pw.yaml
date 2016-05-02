@@ -1,0 +1,25 @@
+---
+- hosts: all
+  #serial: 50
+  become: yes
+  tasks:
+  - name: stop cfengine
+    service:
+      name: cfengine3
+      state: stopped
+  - name: stop snmpd
+    service:
+      name: snmpd
+      state: stopped
+  - name: set snmp credentials
+    command: /usr/bin/net-snmp-create-v3-user -ro -A 7qpBzWq3TYrc26ZU -X 7qpBzWq3TYrc26ZU -a SHA -x AES solarwinds
+  - name: run cfengine
+    command: /usr/sbin/cf-agent -IKC -Dtest
+  - name: start cfengine
+    service:
+      name: cfengine3
+      state: started
+  - name: start snmpd
+    service:
+      name: snmpd
+      state: started

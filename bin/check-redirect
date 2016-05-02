@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [[ $# -ne 3 ]] ; then
+    echo "Usage: $0 <redirect origin hostname> <redirect source path> <redirect destination path>"
+    exit 1
+fi
+
+for h in $(curl -s http://hdb/hdbq/prod*ece | grep rpre); do
+
+  REDIR=$(curl -s -I -H "Host: $1" http://"$h".nandomedia.com/"$2" | grep "$3")
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "$h: $1/$2 does not redirect to $3"
+    echo "DETAIL: $(curl -s -I -H "Host: $1" http://"$h".nandomedia.com/"$2" | grep Location)"
+    echo
+  fi
+
+done

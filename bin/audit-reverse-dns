@@ -1,0 +1,125 @@
+#!/usr/bin/python
+
+import os
+import sys
+import optparse
+import socket
+import textwrap
+
+import dns.resolver
+import netaddr.ip
+
+def banner(title, msg):
+    print title
+    print '='*len(title)
+    print
+    print textwrap.fill(msg), '::'
+    print
+
+class Checker (object):
+
+    def __init__ (self):
+        self.mismatch = []
+        self.no_reverse = []
+        self.no_forward = []
+        self.multiple_rev = []
+        self.multiple_fwd = []
+
+        self.blocks = []
+
+    def check_cidr(self, cidr):
+        self.blocks.append(cidr)
+
+        network = netaddr.ip.IPNetwork(cidr)
+        for ip in network:
+            self.check(ip)
+
+    def check(self, ip):
+        revip = ip.reverse_dns
+
+        # find PTR records
+        try:
+            ptrs = dns.resolver.query(revip, 'PTR')
+        except dns.resolver.NXDOMAIN:
+            self.no_reverse.append(ip)
+            return
+
+        # note multiple PTR records
+        if len(ptrs) > 1:
+            self.multiple_rev.append((ip, list(ptrs)))
+
+        # for each name discovered in a PTR record,
+        # perform a forward lookup and see if it matches.
+        for ptr in ptrs:
+            name = ptr.to_text()
+            try:
+                addrs = dns.resolver.query(name, 'A')
+
+                if len(addrs) > 1:
+                    self.multiple_fwd.append((ip, name, list(addrs)))
+
+                for addr in addrs:
+                    if str(addr) != str(ip):
+                        self.mismatch.append((ip, name, addr))
+            except dns.resolver.NXDOMAIN:
+                self.no_forward.append((ip, name))
+
+    def report(self):
+        if self.no_forward \
+                or self.mismatch \
+                or self.multiple_rev \
+                or self.multiple_fwd:
+            print '='*70
+            print 'Reverse DNS audit'
+            print '='*70
+            print
+            print 'Networks'
+            print '========'
+            print
+            print 'This audit is for the following address blocks:'
+            print
+            for network in self.blocks:
+                print '-', network
+            print
+
+        if self.no_forward:
+            banner('NOFORWARD', 'PTR record does not correspond to an A record')
+            print '\n'.join(['  %-15s %s' % (str(x), y) for x,y in self.no_forward])
+            print
+
+        if self.mismatch:
+            banner('MISMATCH', 'Reverse lookup of name in PTR record does not yield original address')
+            print '\n'.join(['  %-15s %s %s' % (str(x), y, str(z)) for x,y,z in
+                self.mismatch])
+            print
+
+        if self.multiple_rev:
+            banner('MULTIREV', 'IP address has multiple PTR records.')
+            print '\n'.join(['  %-15s %s' % (str(x), ','.join([z.to_text() for z in
+                y])) for x,y in self.multiple_rev])
+            print
+
+        if self.multiple_fwd:
+            banner('MULTIFWD', 'Name from PTR record has multiple A records.')
+            print '\n'.join(['  %-15s %s %s' % (str(ip), name,
+                ','.join([addr.to_text() for addr in addrs])) for
+                ip,name,addrs in self.multiple_fwd])
+            print
+
+def parse_args():
+    p = optparse.OptionParser()
+    return p.parse_args()
+
+def main():
+    opts, args = parse_args()
+    checker = Checker()
+
+    for cidr in args:
+        checker.check_cidr(cidr)
+
+    checker.report()
+
+if __name__ == '__main__':
+    main()
+
+

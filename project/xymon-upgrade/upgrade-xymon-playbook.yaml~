@@ -1,0 +1,72 @@
+---
+- hosts: radm802p
+  serial: 10
+  become: yes
+  tasks:
+  - name: check if xymon service exists
+    stat: path=/etc/init.d/xymon
+    register: xymon_service_status
+  - name: check if devmon service exists
+    stat: path=/etc/init.d/devmon
+    register: devmon_service_status
+  - name: check if xymon-client service exists
+    stat: path=/etc/init.d/xymon-client
+    register: xymonclient_service_status
+  - name: ensure apache is at the latest version
+    yum:
+      name: httpd
+      state: latest
+  - name: ensure mod_ssl is at the latest version
+    yum:
+      name: mod_ssl
+      state: latest
+  - name: ensure apache is running
+    service:
+      name: httpd
+      state: started
+  - name: ensure xymon is stopped
+    service:
+      name: xymon
+      state: stopped
+    when: xymon_service_status.stat.exists
+  - name: ensure xymon-client is stopped
+    service:
+      name: xymon-client
+      state: stopped
+    when: xymonclient_service_status.stat.exists
+  - name: ensure devmon is stopped
+    service:
+      name: devmon
+      state: stopped
+    when: devmon_service_status.stat.exists
+  - name: kill any remaining xymon processes
+    command: killall -u xymon
+    ignore_errors: True
+  - name: remove xymon package
+    yum:
+      name: xymon
+      state: absent
+  - name: move xymon etc to tmp location
+    command: mv /usr/lib/xymon/server/etc /usr/lib/xymon/server/etc.tmp creates=/usr/lib/xymon/server/etc.tmp removes=/usr/lib/xymon/server/etc
+  - name: ensure xymon-server is the latest version
+    yum:
+      name: xymon-server
+      state: latest
+      enablerepo: mi-tech-test
+      update_cache: yes
+  - name: remove etc symlink created by xymon-server package
+    file:
+      path: /usr/lib/xymon/server/etc
+      state: absent
+  - name: move xymon tmp etc back to etc
+    command: mv /usr/lib/xymon/server/etc.tmp /usr/lib/xymon/server/etc creates=/usr/lib/xymon/server/etc removes=/usr/lib/xymon/server/etc.tmp
+  - name: run cfengine after install
+    command: /usr/sbin/cf-agent -IKC
+  - name: ensure xymon-server is running
+    service:
+      name: xymon-server
+      state: started
+  - name: ensure devmon is running
+    service:
+      name: devmon
+      state: started

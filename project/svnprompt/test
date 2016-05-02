@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ -d .svn ]; then
+echo yes
+fi
